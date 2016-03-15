@@ -1,0 +1,23 @@
+{
+  "name": "gud-scrubs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo js/index.js:bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dportology/gud-scrubs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dportology/gud-scrubs/issues"
+  },
+  "homepage": "https://github.com/dportology/gud-scrubs#readme",
+  "dependencies": {
+    "budo": "^8.1.0",
+    "simple-peer": "^6.0.2"
+  }
+}
