@@ -1,37 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"ng-app="vis">
 
     <head>
 
         <meta charset="utf-8">
-        <title>Stream Test</title>
-        <!--
+        <title>Stream Test</title> 
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main.css">-->
+        <link rel="stylesheet" href="css/main.css">
     </head>
-
     <body>
-
-
-        <label>Your ID:</label></br>
-        <textarea id="yourId"></textarea></br>
-        <label>Other ID:</label></br>
-        <textarea id="otherId"></textarea></br>
-        <button id="connect">connect</button></br>
-
-        <label>Enter Message:</label></br>
-        <textarea id="yourMessage"></textarea>
-        <button id="send">send</button>
-        <pre id="messages"></pre>
-
-        <script src="bundle.js" charset="utf-8"></script>
-
-        <!--
-        <div class="booth">
-            <video id="video" width="400" height="300" autoplay></video>
-
-        </div>
-
-        <script src="js/video.js"></script>-->
+	<nav class="navbar navbar-fixed-top">
+	  <div class="container-fluid">
+	    <div ng-show="authenticated == true" class="navbar-header">
+	      <a class="navbar-brand icon" style="color:white;" href="#">Vis a Vis</a>
+	     
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul ng-show="authenticated == true"class="nav navbar-nav">
+		<li class="active"><a href="#">Profile<span class="sr-only">(current)</span></a></li>
+		<li><a href="#">Link</a></li>
+		<li class="dropdown">
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+		  <ul class="dropdown-menu">
+		    <li><a href="#">Action</a></li>
+		    <li><a href="#">Another action</a></li>
+		    <li><a href="#">Something else here</a></li>
+		    <li role="separator" class="divider"></li>
+		    <li><a href="#">Separated link</a></li>
+		    <li role="separator" class="divider"></li>
+		    <li><a href="#">One more separated link</a></li>
+		  </ul>
+		</li>
+ 	      </ul>     
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+</nav>
+	<div ng-show="authenticated == true" class="main-sidebar">
+		<div class="prof-icon">
+		 <img src="images/tux.jpg" height="204" width="204" style="margin:10px; box-shadow: 0px 0px 10px #fff;"/>		
+		<span class="nametag" style="font-family:Comic Sans"> Tux </span>	
+		</div>
+		<hr style="margin-top:0px !important;"/>	
+		<ul id="tabs" class="sidebar-menu">
+            	<hr>
+		    <li>
+		      <a href="#shiny-tab-NewAnalysis">
+			<span class="glyphicon glyphicon-unchecked"></span>
+			<span>Status</span>
+		      </a>
+		    </li>
+		    <hr>
+		    <li>
+		      <a href="#shiny-tab-Home">
+			<span class="glyphicon glyphicon-user"></span>
+			<span>Friends</span>
+		      </a>
+		    </li>
+		    <hr>
+		   <li>
+	       		<a href="#shiny-tab-Home">
+			<span class="glyphicon glyphicon-cog"></span>
+			<span>Settings</span>
+	    	      </a>
+	    	   </li>
+		   <hr>
+          </ul>
+	</div>	
+	<div class="main-content" ng-view>	
+	</div>
+		<script src="/node_modules/jquery/dist/jquery.min.js"></script>	
+		<script src="/node_modules/angular/angular.min.js"></script>
+		<script src="/node_modules/angular-route/angular-route.js"></script>
+		<script src="/js/app.js"></script>
+		<script src="/js/services/loginService.js"></script>
+		<script src="/js/controller.js"></script>
+		<script src="/js/login-controller.js"></script>
+		<script src="bundle.js" charset="utf-8"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </body>
 </html>
