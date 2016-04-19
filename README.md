@@ -5,7 +5,7 @@ nodejs(npm), angular for front end(not implemented) + bootstrap
 Instructions:
 going to be writing out easy to follow instructions in case you're new to git or node
 
-NOTE - ONLY WORKS ON CHROME FOR NOW. FIREFOX BE DOING SOME GAY SHIT.
+
 
 1) clone to your local machine 'git clone https://github.com/dportology/gud-scrubs'
 2) 'npm install' from within the projects directory (install nodejs first if you don't have this)
