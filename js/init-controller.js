@@ -1,3 +1,6 @@
+'use strict';
+angular.module('init.controller',[]).controller("iniCtrl",['$scope','$rootScope','$location','authFactory',function($scope,$rootScope,$location,authFactory){
+
 vendorUrl = window.URL || window.webkitURL;
 
 navigator.getMedia = 	navigator.getUserMedia ||
@@ -44,3 +47,5 @@ navigator.getMedia({ video: true, audio: true }, function(stream){
 }, function (err){
 	console.error(err)
 })
+
+}]);

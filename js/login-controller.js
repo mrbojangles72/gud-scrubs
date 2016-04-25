@@ -3,6 +3,7 @@ angular.module('login.controller',[]).controller("logCtrl",['$scope','$rootScope
 
 $rootScope.authenticated = false;
 $scope.login = function(){
+	//make function call to authenticate creds wiht authFactory
 	$rootScope.authenticated = true;	
 	$location.path('/home');
 

@@ -4,6 +4,7 @@ var app = angular.module("vis",
 	[
 	   'main.controller',
 	   'login.controller',
+	   'init.controller',
 	   'authFact',
 	   'ngRoute'
 	]
@@ -24,6 +25,14 @@ var app = angular.module("vis",
 	.when('/home',{
 		templateUrl: 'views/home.html',
 		controller:'mainCtrl'
+	})
+	.when('/chat',{
+		templateUrl:'/views/chat.html',
+		controller:'mainCtrl'
+	})
+	.when('/init',{
+		templateUrl:'views/chat.html',
+		controller:'iniCtrl'
 	});
 
 }]);

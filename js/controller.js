@@ -3,7 +3,28 @@ angular.module('main.controller',[]).controller("mainCtrl",['$scope','$rootScope
 
 angular.element(document).ready(function () {
 
-$scope.user = {name:"TUX"}
+//generate the unique id 
+
+
+
+$scope.user = {name:"TUX"};
+$scope.authenticated = true;
 	
 });
+
+
+$scope.call = function(){
+
+//make the video call
+}
+
+$scope.acceptCall = function(){
+
+//can accept the call
+}
+$scope.sendTxt = function(){
+
+//send a txt
+}
+
 }]);

@@ -11,60 +11,55 @@
     <body>
 	<nav class="navbar navbar-fixed-top">
 	  <div class="container-fluid">
-	    <div ng-show="authenticated == true" class="navbar-header">
+	    <div ng-cloak ng-show="authenticated == true" class="navbar-header" style="position:relative;left:698px;">
 	      <a class="navbar-brand icon" style="color:white;" href="#">Vis a Vis</a>
 	     
 	    </div>
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      <ul ng-show="authenticated == true"class="nav navbar-nav">
-		<li class="active"><a href="#">Profile<span class="sr-only">(current)</span></a></li>
-		<li><a href="#">Link</a></li>
-		<li class="dropdown">
-		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-		  <ul class="dropdown-menu">
-		    <li><a href="#">Action</a></li>
-		    <li><a href="#">Another action</a></li>
-		    <li><a href="#">Something else here</a></li>
-		    <li role="separator" class="divider"></li>
-		    <li><a href="#">Separated link</a></li>
-		    <li role="separator" class="divider"></li>
-		    <li><a href="#">One more separated link</a></li>
-		  </ul>
-		</li>
- 	      </ul>     
-	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 </nav>
-	<div ng-show="authenticated == true" class="main-sidebar">
+	<div ng-cloak ng-show="authenticated == true" class="main-sidebar">
 		<div class="prof-icon">
 		 <img src="images/tux.jpg" height="204" width="204" style="margin:10px; box-shadow: 0px 0px 10px #fff;"/>		
 		<span class="nametag" style="font-family:Comic Sans"> Tux </span>	
 		</div>
 		<hr style="margin-top:0px !important;"/>	
-		<ul id="tabs" class="sidebar-menu">
+		<div id="tabs" class="sidebar-menu">
             	<hr>
-		    <li>
-		      <a href="#shiny-tab-NewAnalysis">
-			<span class="glyphicon glyphicon-unchecked"></span>
-			<span>Status</span>
+		    <div class="side-li">
+		      <a ng-click="toggleStatus = !toggleStatus" style="color:white; cursor:pointer;">	
+		      	<span class="glyphicon glyphicon-user"></span>
+				<span ng-init="statusS = 'Status'" ng-bind="statusS"></span>
 		      </a>
-		    </li>
+		      <div ng-show="toggleStatus" id="friends" style="background-color:green !important; color:black" ng-click="statusS = 'Status Available'; toggleStatus = !toggleStatus">
+				Available
+		      </div>
+		      <div ng-show="toggleStatus" id="friends" style="background-color:yellow !important; color:black;" ng-click="statusS = 'Status Away';toggleStatus = !toggleStatus">
+				Away
+		      </div>
+		      <div ng-show="toggleStatus" id="friends" style="background-color:red !important; color:black;" ng-click="statusS = 'Status Offline'; toggleStatus = !toggleStatus">
+				Offline
+		      </div>
+		    </div>
+
 		    <hr>
-		    <li>
-		      <a href="#shiny-tab-Home">
-			<span class="glyphicon glyphicon-user"></span>
-			<span>Friends</span>
+		    <div class="side-li">
+		      <a ng-click="toggleFriend = !toggleFriend" style="color:white; cursor:pointer;">	
+		      	<span class="glyphicon glyphicon-user"></span>
+				<span>Friends</span>
 		      </a>
-		    </li>
+		      <div ng-show="toggleFriend"id="friends">
+				FRIEND 1 <span style="position:relative; left:100px; cursor:pointer;">Call</span>
+		      </div>
+		    </div>
+		     <hr>
+		     <div class="side-li">
+		      <a style="color:white; cursor:pointer;">	
+		      	<span class="glyphicon glyphicon-user"></span>
+				<span>Settings</span>
+		      </a>
+		    </div>
 		    <hr>
-		   <li>
-	       		<a href="#shiny-tab-Home">
-			<span class="glyphicon glyphicon-cog"></span>
-			<span>Settings</span>
-	    	      </a>
-	    	   </li>
-		   <hr>
-          </ul>
+          </div>
 	</div>	
 	<div class="main-content" ng-view>	
 	</div>
@@ -75,6 +70,7 @@
 		<script src="/js/services/loginService.js"></script>
 		<script src="/js/controller.js"></script>
 		<script src="/js/login-controller.js"></script>
+		<script src="/js/init-controller.js"></script>
 		<script src="bundle.js" charset="utf-8"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </body>
